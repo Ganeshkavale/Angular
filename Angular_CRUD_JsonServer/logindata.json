@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "role": "admin",
+      "email": "ganesh27@gmail.com",
+      "password": "Ganesh@123"
+    },
+    {
+      "id": 2,
+      "role": "user",
+      "email": "gan@gmail.com",
+      "password": "Ganesh@123"
+    }
+  ],
+  "products": [
+    {
+      "product": "MAC5",
+      "price": "555555555",
+      "brand": "Appple",
+      "id": "1"
+    },
+    {
+      "product": "Apple",
+      "price": "654566",
+      "brand": "Mac2",
+      "id": "2"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+
+
+<mat-form-field appearance="outline">
+    <mat-label style="width: 600px;">Search by data: </mat-label>
+    <input matInput placeholder="Search item"  (keyup)="applyFilter($event)" placeholder="Search" #input />
+
+
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="addProduct()" id="add">Add Product</button>
+<button mat-raised-button color="primary" (click)="logoutButton()" id="logout">Logout</button>
+<div>
+        <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8 table">
+
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 20px;padding-right: 60px;"> ID </th>
+                <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="product">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 20px;"> Product Name </th>
+                <td mat-cell *matCellDef="let row"> {{row.product}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="price">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 20px;"> Product Price </th>
+                <td mat-cell *matCellDef="let row"> {{row.price}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="brand">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 20px;"> Product Brand </th>
+                <td mat-cell *matCellDef="let row"> {{row.brand}} </td>
+            </ng-container>
+
+                    
+
+            <ng-container matColumnDef="edit">
+                <th mat-header-cell *matHeaderCellDef style="font-size: 20px; text-indent: 30px;" >Update </th>
+                <td mat-cell *matCellDef="let row">  <button mat-raised-button class="edit-btn" routerLink='/edit/{{row.id}}'>
+                    Edit
+                  </button></td>
+              </ng-container>
+        
+              <ng-container matColumnDef="delete">
+                <th mat-header-cell *matHeaderCellDef style="font-size: 20px; text-indent: 30px;">Delete</th>
+                <td mat-cell *matCellDef="let row">  <button (click)="deleteProductData(row.id)" mat-raised-button class="delete-btn">
+                    Delete
+                  </button></td>
+              </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+              </tr>
+
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" style="margin-right: 900px; color: black; font-size: 13px;"></mat-paginator>
+
+</div>
+
+

@@ -1,0 +1,39 @@
+#main{
+    margin-left: 15rem;
+    margin-top: 2%;
+    // background-color: rgb(255, 228, 224);
+    padding: 50px 250px 100px 100px;
+    border: 5px solid red;
+    width: 600px;
+}
+h2{
+    font-size: 30px;
+}
+mat-form-field{
+    width: 30rem;
+    // border: 3px gray solid;
+    border-radius: 5px;
+}
+#disp{
+    margin-top: 20px;
+    margin-left: 80px;
+
+}
+#add{
+    margin-top: 20px;
+    margin-left: 20px;
+    
+}
+#add-btn{
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+}
+
+#logout{
+    margin-left: 1100px;
+    background-color: rgb(160, 255, 141);
+    width: 100px;
+    color: black;
+    font-size: 20px;
+}

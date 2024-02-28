@@ -1,0 +1,56 @@
+<!-- json-server --watch logindata.json
+ -->
+ 
+<form [formGroup]="myForm" (ngSubmit)="handleSubmit(myForm)">
+  
+
+    <div id="main">  
+       <h2>Login form</h2>
+   <mat-form-field  appearance="outline">
+       <mat-label>Email: </mat-label>
+       <input matInput placeholder="Enter your email" name="email"
+       formControlName="email" required>
+       
+       
+
+
+       </mat-form-field>
+       <div *ngIf="myForm.get('email')?.errors" class="errors">       
+        <ng-container *ngIf="myForm.get('email')?.touched && myForm.get('email')?.errors?.['required']"> This field is required!
+        </ng-container>
+
+        <ng-container *ngIf="myForm.get('email')?.touched && myForm.get('email')?.errors?.['pattern']">  Please enter atleast one lower case,  and one special character '@' (ex. ganesh@gmail.com)!
+        </ng-container>
+        
+     </div>
+       <br> <br>
+       <mat-form-field  appearance="outline">
+       <mat-label>Password</mat-label>
+       <input matInput placeholder="Enter your password" value="" name="password" type="password" formControlName="password" required>
+       
+
+     
+
+
+       </mat-form-field>
+
+       <div *ngIf="myForm.get('password')?.errors" class="errors">       
+        <ng-container *ngIf="myForm.get('password')?.touched && myForm.get('password')?.errors?.['required']">  This field is required
+        </ng-container>
+
+        <ng-container *ngIf="myForm.get('password')?.touched && myForm.get('password')?.errors?.['pattern']">  Please enter atleast 1 lower case, 1 Upper case, 1 number, and 1 special character (ex. ganesh@gmail.com)!
+        </ng-container>
+        
+     </div>
+       <br><br>
+       <button mat-raised-button color="primary" [disabled]="myForm.invalid" id="login">Login</button>
+   
+   </div> 
+     </form>
+
+   
+       <!-- -------------- END ------------------- -->
+      
+   
+   
+         

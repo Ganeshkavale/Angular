@@ -1,0 +1,39 @@
+<form [formGroup]="myForm" (ngSubmit)="handleSubmit(myForm)">
+   
+    <button mat-raised-button color="primary" (click)="displayData()" id="disp">Display Data</button>
+    <button mat-raised-button color="primary" (click)="addProduct()" id="add">Add Product</button>
+    <button mat-raised-button color="primary" (click)="logoutButton()" id="logout">Logout</button>
+    <div id="main">
+        <h2>Add Product Details</h2>
+        <mat-form-field appearance="outline">
+            <mat-label>Enter id: </mat-label>
+            <input matInput placeholder="Enter id" formControlName="id" required>
+
+
+        </mat-form-field>
+        <br> 
+        <mat-form-field appearance="outline">
+            <mat-label>Enter Product Name: </mat-label>
+            <input matInput placeholder="Enter Product Name" formControlName="product" required>
+        </mat-form-field>
+
+        <br> 
+        <mat-form-field appearance="outline">
+            <mat-label>Enter Price: </mat-label>
+            <input matInput placeholder="Enter Price " formControlName="price" required>
+        </mat-form-field>
+        <br>
+
+     
+        <mat-form-field appearance="outline">
+            <mat-label>Enter Brand Name: </mat-label>
+            <input matInput placeholder="Enter Brand Name:" formControlName="brand" required>
+        </mat-form-field>
+        <br> 
+        <button mat-raised-button color="primary" [disabled]="myForm.invalid" id="add-btn">Add</button>
+
+    </div>
+</form>
+
+
+<!-- -------------- END ------------------- -->
